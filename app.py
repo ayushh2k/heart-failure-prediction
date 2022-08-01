@@ -8,7 +8,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('./index.html')
 
 
 @app.route('/predict',methods=['POST'])
@@ -24,9 +24,9 @@ def predict():
     print(output)
 
     if output == 0:
-        return render_template('index.html', prediction_text='THE PATIENT IS NOT LIKELY TO HAVE A HEART FAILURE')
+        return render_template('./index.html', prediction_text='THE PATIENT IS NOT LIKELY TO HAVE A HEART FAILURE')
     else:
-         return render_template('index.html', prediction_text='THE PATIENT IS LIKELY TO HAVE A HEART FAILURE')
+         return render_template('./index.html', prediction_text='THE PATIENT IS LIKELY TO HAVE A HEART FAILURE')
         
 @app.route('/predict_api',methods=['POST'])
 def results():
