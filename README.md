@@ -2,10 +2,10 @@
 
 A web application that predicts the chance of a heart failure-related death. It takes into account twelve characteristics that forecast death from heart failure.
 
-[Website Link](https://heart-pred223.herokuapp.com/)
+[Website Link](https://heart-pred223.herokuapp.com/) <br>
 [Medium Article](https://towardsdatascience.com/deploying-a-heart-failure-prediction-model-using-flask-and-heroku-55fdf51ee18e)
 
-Model Used: Support Vector Classifier
+Model Used: Support Vector Classifier <br>
 Metrics Used: Flask and Heroku
 
 # Images:
