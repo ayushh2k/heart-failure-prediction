@@ -2,8 +2,10 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 from sklearn.preprocessing import StandardScaler
+
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('./Model/model.pkl', 'rb'))
+scaler = pickle.load(open('./Model/scaler.pkl', 'rb'))
 
 
 @app.route('/')
@@ -24,9 +26,9 @@ def predict():
     print(output)
 
     if output == 0:
-        return render_template('./index.html', prediction_text='THE PATIENT IS NOT LIKELY TO HAVE A HEART FAILURE')
+        return render_template('./index.html', prediction_text='The patient is not likely to have heart disease')
     else:
-         return render_template('./index.html', prediction_text='THE PATIENT IS LIKELY TO HAVE A HEART FAILURE')
+         return render_template('./index.html', prediction_text='The patient is likely to have heart failure')
         
 @app.route('/predict_api',methods=['POST'])
 def results():
